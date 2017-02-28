@@ -1,0 +1,16 @@
+{
+	"name" : "impetusportal",
+	"version" : "0.0.1",
+	"dependencies" :
+	{
+		"express" : "4.14.1",
+		"angular" : "1.6.2",
+		"mongoose" : "4.8.2",
+		"angular-cookies" : "1.6.2",
+		"angular-route" : "1.6.2",
+		"body-parser" : "3.10.10",
+		"method-override" : "3.10.10"
+		
+
+ 	}
+}

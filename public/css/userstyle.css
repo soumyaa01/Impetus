@@ -1,0 +1,460 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+#table
+{
+  display: none;
+}
+#edit
+{
+  display: none;
+}
+.userform input[type=submit][disabled] ,button[disabled],.submit[disabled],.edit[disabled],#sub2[disabled]{
+  
+  cursor: not-allowed;
+}
+
+.succ
+{
+  color: green;
+  font-size: 1.2em;
+    font-family: 'Prompt';
+  text-align: right;
+  margin-right: 5%;
+}
+.err
+{
+  color: red;
+  font-size: 0.7em;
+  font-family: 'Prompt';
+ }
+
+.formwrap
+{
+  min-height: 100%;
+  width: 90%;
+  margin-left: 8%;
+  margin-right: 2%;
+  overflow-y: scroll;
+  background-color: #ffffff;
+}
+
+.formwrap h3
+{
+  text-align: center;
+  font-size: 1em;
+  font-family: 'Prompt';
+}
+
+
+.org p
+{
+  font-size: 1em;
+  color: #959595;
+  margin-top: 4%;
+
+}
+.userform
+{
+  width: 65%;
+  height: 6%;
+
+  background: transparent;
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid #45494C;
+  font-size: 1em;
+  color: #959595;
+  padding: 8px 0;
+  resize: none;
+  margin-top: 20px;
+}
+textarea
+{
+  resize:none;
+  height: 35%;
+}
+
+.userform:hover, .userform:focus
+{
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border-bottom: 4px solid #000;
+}
+
+
+
+
+.sub{
+  cursor: pointer;
+  width: 15%;
+  border: none;
+  background: #153647;
+  color: #FFF;
+  margin-right: 6%;
+  padding: 10px;
+  font-size: 12px;
+  font-family: 'Roboto';
+  margin-top: 1%;
+  float: bottom;
+  align-self: right;
+  margin-left: 66%;
+}
+.sub:hover
+{
+background: #003D59;
+}
+input[type=submit][disabled],button[disabled] {
+  
+  cursor: not-allowed;
+}
+#alignleft
+{
+  float: left;
+  width: 43%;
+  text-align: left;
+  margin-left: 10%;
+  margin-top: 4%;
+  display: inline-block;
+}
+#alignright
+{
+  float: right;
+  width: 43%;
+  margin-top: 3%;
+  
+  display: inline-block;
+ 
+}
+.sidepane
+{
+  height: 100%;
+  width : 25%;
+  background-color: #000316;
+  left : 0%;
+  display: inline;
+  position: fixed;
+ 
+}
+.formwrap
+{
+  width: 75%;
+  margin-left: 28%;
+  overflow-y: scroll;
+
+  overflow-x: hidden;
+}
+.container-fluid
+{
+  background-color: #000316;
+}
+
+.sidepane h3
+{
+  color: #ecf0f1;
+  font-family: 'Prompt';
+  font-size: 3.5em;
+  text-align: center;
+  margin-top: 45%;
+  font-style: bold;
+  font-weight: 300;
+}
+
+.top
+{
+  width: 75%;
+  height: 5%;
+  float: right;
+  background-color: #000316;
+  opacity: 0.9;
+}
+
+#ed
+{
+  margin-left: 24%;
+  margin-top: 1%;
+}
+#sub2
+{
+  
+  width: 30%;
+  
+  margin-right: 8%;
+
+}
+/*----------------------------- */
+/* Admin view */
+
+.head
+{
+  background-color: #16a085;
+}
+table
+{
+  margin-top: 1%;
+  margin-left: 4%;
+   border : 5% solid #fff;
+  width: 60%;
+  border-radius: 2%;
+}
+
+tr
+{
+  height: 45%;
+  width: 100%;
+  font-size: 1em;
+  font-family: 'Prompt';
+  border-spacing: 1.2em;
+  padding-left: 8%;
+  background-color: #EEEEEE;
+
+}
+
+.column,td
+{
+  font-style: bold;
+  font-weight: 300;
+   font-size: 1em;
+  font-family: 'Prompt';
+  border-spacing: 0.2em;
+  padding-left: 3%;
+    width: 50%;
+    padding: 1%;
+     border: 1px solid #fff;
+  border-collapse: collapse;
+  border-radius: 2%;
+
+
+
+}
+#up
+{
+  margin-left: 16%;
+}
+.edit
+{
+ 
+  float: center;
+  color: white;
+  cursor: pointer;
+  width: 15%;  margin-left: 2%;
+  border: none;
+  background: #153647;
+  color: #FFF;
+  padding: 10px;
+  font-size: 12px;
+  margin-top: 1%;
+  font-family: 'Prompt';
+  
+  align-self: center;
+
+ 
+}
+.edit:hover
+{
+  background-color: #003D59;
+}
+
+#sub
+{
+  margin-right: 55%
+  
+  width: 30%;
+  margin-top: 7%;
+}
+
+#tableview
+{
+  margin-left: 15%; 
+  float: center;
+  width: 100%;
+  top: 1%;
+}
+
+
+#alignright2
+{
+   float: right;
+  width: 40%;
+  margin-top: 4%;
+  margin-right: 3%;
+  display: inline-block;
+}
+
+
+#editpanel
+{
+  width: 80%;
+  height: 100%;
+  display: none;
+}
+.userform
+{
+  width: 60%;
+}
+
+#editpanel
+{
+  display: none;
+}
+
+.navbut
+{
+  width: 13%;
+  height: 100%;
+  float: right;
+  right: 0;
+  position: relative;
+  font-family: 'Prompt';
+  font-style: bold;
+  font-weight: 300;
+  background-color: #000316;
+  color: #93969F;
+  border : 2px solid #93969F;
+}
+
+.navbut:hover
+{
+  background-color: #000315;
+  color: #fff;
+}
+.succ2
+{
+  font-family: 'Prompt';
+  font-size: 1.5em;
+  color: green;
+  margin-top: 2%;
+ margin-left: 33%;
+}
+.err2
+{
+  font-family: 'Prompt';
+  font-size: 0.8em;
+  color: red;
+ 
+  margin-left: 5%;
+  
+}
+.succ3
+{
+    font-family: 'Prompt';
+  font-size: 1em;
+  color: green;
+ 
+  margin-left: 5%;
+}
+/*for responsive layout */
+@media only screen and (max-width: 640px)
+{
+   .sidepane h3
+  {
+    font-size: 20px;
+    text-align: left;
+  }
+  .top a
+  {
+    font-size: 10px;
+  }
+  #title
+  {
+    font-size: 15px;
+  }
+  .contain
+  {
+    overflow-y : scroll;
+
+  }
+  #header
+  {
+    margin-top: 45%;
+  }
+  #header h1
+  {
+    font-size : 2.5em;
+   
+  }
+  #header h2
+  {
+    font-size: 1em;
+  }
+  #header h3
+  {
+    font-size: 1em;
+  }
+
+  #header button
+  {
+    width: 70%;
+    font-size: 1em;
+  }
+  .half
+  {
+    width : 100%;
+  }
+  #head
+  {
+   display: none;
+  }
+  .userform
+  {
+    font-size: 1em;
+  }
+  .container h2
+  {
+    font-size: 1em;
+  }
+  .column
+  {
+    font-size: 0.5em;
+  }
+  .edit
+  {
+    font-size: 0.5em;
+  }
+  .navbut
+  {
+    font-size: 0.5em;
+    width: 25%;
+  }
+  .sub
+  {
+    font-size: 0.5em;
+  }
+
+  #tablevol
+  {
+        font-size: 0.5em;
+  }
+  .edittab
+  {
+    font-size: 0.5em;
+  }
+}
+
+.container 
+{
+  width: 100%;
+  text-align: center;
+}
+.formhead
+{
+  margin-left: -13%;
+    font-family: 'Roboto';
+  font-style: bold;
+  font-weight: 300;
+  font-size: 1.5em;
+  text-align: center;
+  color: #000316;
+  margin-top: 3%;
+  text-decoration: underline;
+}
+
+/* Volunteer view */
+#volt
+{
+  display: none;
+}
+#editvol
+{
+  display: none;
+}

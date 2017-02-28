@@ -1,0 +1,190 @@
+<div ng-init="alert()">
+
+<div class="sidepane"><h3>Volunteer's Panel</h3></div>
+
+<div class="container-fluid top">
+ 	<button class="navbut" ng-click="logout()"> Log Out </button>
+	<button class="navbut" ng-click="loadpro()"> View Profile </button>
+</div>
+
+<!-- View Data -->
+<div class="formwrap" id="volt">
+<div class="container"> <h2 class="formhead"> Your Profile </h2></div>
+<div class="col-md-2"></div>
+<div id="tableview">
+
+   <table>
+  <tr>
+    <td class="column"> Name </td>
+    <td class="column">{{inf.volunteer.name}}</td>
+    </tr>
+
+    <tr>
+    <td class="column"> Contact </td>
+    <td class="column"> {{inf.volunteer.contact}}</td>
+    </tr>
+
+    <tr>
+    <td class="column"> Year </td>
+    <td class="column">{{inf.volunteer.year}}</td>
+    </tr>
+
+    <tr>
+    <td class="column"> Branch </td>
+     <td class="column">{{inf.volunteer.branch}}</td>
+     </tr>
+
+     <tr>
+     <td class="column"> Reason for volunteering</td>
+     <td class="column">{{inf.volunteer.reason}}</td>
+     </tr>
+
+      <tr>
+     <td class="column"> IEEE Membership Number </td>
+     <td class="column"> {{inf.volunteer.ieee}}</td>
+     </tr>
+
+     <tr>
+     <td class="column"> Assigned Duty </td>
+     <td class="column admin"> {{inf.volunteer.duty}}</td>
+     </tr>
+
+  
+
+   
+
+    </table>
+      <button class="edit" id="ed" ng-click="editvvol()"> Edit </button>
+    </div>
+    </div>
+  <div class="col-md-2"></div>
+   
+</div>
+
+
+
+<!-- EDIT FORM-->
+
+<div class="formwrap" id="editvol">
+  <div class="container"> <h2 class="formhead"> Edit Your Profile </h2></div>
+ <form class="org" name="volupd" novalidate>
+   <br>
+    <div id="alignleft">
+     
+        
+         <input placeholder="User Email  *" id="emaile" class="userform" name="date" type="email"  ng-model="user.email" readonly="true" required>
+   
+       <br>
+        <br> 
+     <input type="text" id="namee" ng-model="user.name" placeholder="Full Name *" name="name" class="userform"  required >
+     <br>
+     <br>
+       <input placeholder="Contact *" type="text" ng-pattern="/^[1-9]{1}[0-9]{9}$/" id="contacte" class="userform" name="cont" ng-model="user.cont" required >
+     <br>
+     <br>
+      <input placeholder="Branch *" id="branche" ng-model="user.branch" name="branch" class="userform"  type="text" required> 
+      <br>
+      <br>   
+
+    <input placeholder="Year (1st Year, 2nd Year etc) *" id="yeare" type="text" class="userform" name="cont2" ng-model="user.year" required>
+     
+    <br>
+    <br>
+    
+  
+     </div>
+     <div id="alignright">
+     <br>
+     <br>
+     
+   
+      
+  
+      <textarea placeholder="Why should you be a volunteer at Impetus 2k17? *" name="reason"  id="reasone" class="userform" ng-model="user.reason" required></textarea>
+ 
+     <br>
+     <br>
+      <input placeholder="IEEE Membership Number *" id="membere" type="text" class="userform" name="member" ng-model="user.ieee" required>
+     
+    <br>
+    <br>
+      
+     
+      <button class="edit" ng-click="updatevol()" id="but" ng-disabled="volupd.$invalid"> Update </button>
+    <span class="succ"> {{message}}</span>  
+
+
+   </div>
+   </form>
+  
+    <br>
+
+</div>
+
+
+
+
+
+<!-- ____________________________________________________________________________________________________________________-->
+
+
+<!--Fresh Form -->
+<div class="formwrap" id="formvol">
+
+ <div class="container"> <h2 class="formhead"> Enter Your Profile </h2></div>
+       <form class="org" name="formvol" novalidate>
+   <br>
+    <div id="alignleft">
+     
+        
+         <input placeholder="User Email" class="userform" name="date" type="email"  ng-model="user.email" required>
+   
+       <br>
+        <br> 
+     <input type="text" ng-model="user.name" placeholder="Full Name" name="name" class="userform"  required >
+     <br>
+     <br>
+       <input placeholder="Contact" type="text" ng-pattern="/^[1-9]{1}[0-9]{9}$/" class="userform" name="cont" ng-model="user.cont" required >
+     <br>
+     <br>
+      <input placeholder="Branch" ng-model="user.branch" name="branch" class="userform"  type="text" required> 
+      <br>
+      <br>   
+
+    <input placeholder="Year (1st Year, 2nd Year etc)" type="text" class="userform" name="cont2" ng-model="user.year" required>
+     
+    <br>
+    <br>
+    
+  
+     </div>
+     <div id="alignright">
+     <br>
+     <br>
+     
+   
+      
+  
+      <textarea placeholder="Why should you be a volunteer at Impetus 2k17?" name="reason" class="userform" ng-model="user.reason" required></textarea>
+ 
+     <br>
+     <br>
+      
+       <input placeholder="IEEE Membership Number" type="text" class="userform" name="member" ng-model="user.ieee" required>
+     
+    <br>
+    <br>
+      
+      <button class="edit" ng-click="volsub()" id="but" ng-disabled="formvol.$invalid"> Submit </button>
+    <span class="succ"> {{message}}</span>  
+
+
+   </div>
+   </form>
+ 
+  
+    <br>
+
+  
+</div>
+</div>

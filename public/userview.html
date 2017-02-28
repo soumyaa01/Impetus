@@ -1,0 +1,266 @@
+
+<div ng-init="alert()">
+
+<div class="sidepane"><h3>Organiser's Panel</h3></div>
+
+<div class="container-fluid top">
+ 	<button class="navbut" ng-click="logout()"> Log Out </button>
+	<button class="navbut" ng-click="loaddata()"> View Data </button>
+</div>
+
+<!-- View Data -->
+<div class="formwrap" id="table">
+<div class="container"> <h2 class="formhead"> Your Idea </h2></div>
+<div class="col-md-2"></div>
+<div id="tableview">
+
+	 <table>
+	<tr>
+    <td class="column"> Event Name </td>
+    <td class="column">{{info.userdata.eventname}}</td>
+    </tr>
+
+    <tr>
+    <td class="column"> Event Description </td>
+    <td class="column"> {{info.userdata.desc}}</td>
+    </tr>
+
+    <tr>
+    <td class="column"> Event Date </td>
+    <td class="column">{{info.userdata.date}}</td>
+    </tr>
+
+    <tr>
+    <td class="column"> Organiser 1 </td>
+     <td class="column">{{info.userdata.org1}}</td>
+     </tr>
+
+     <tr>
+     <td class="column"> Organiser 2</td>
+     <td class="column">{{info.userdata.org2}}</td>
+     </tr>
+
+     <tr>
+     <td class="column"> Organiser 3 </td>
+     <td class="column"> {{info.userdata.org3}}</td>
+     </tr>
+
+     <tr>
+     <td class="column"> Contact 1 </td>
+     <td class="column"> {{info.userdata.cont1}} </td>
+     </tr>
+
+     <tr>
+     <td class="column"> Contact 2 </td>
+     <td class="column"> {{info.userdata.cont2}} </td>
+     </tr>
+
+     <tr>
+     <td class="column"> Contact 3 </td>
+     <td class="column"> {{info.userdata.cont3}} </td>
+     </tr>
+
+     <tr>
+     <td class="column"> Team Size </td>
+     <td class="column"> {{info.userdata.team}} </td>
+     </tr>
+
+     <tr>
+     <td class="column"> Event Duration </td>
+     <td class="column">{{info.userdata.duration}}</td>
+      </tr>
+
+      <tr>
+      <td class="column"> Items Required </td>
+       <td class="column">{{info.userdata.items}}</td>
+	</tr>
+
+     <tr>
+      <td class="column"> Estimated Budget </td>
+       <td class="column">{{info.userdata.bud}}</td>
+    </tr>
+
+     <tr>
+      <td class="column"> No. of Volunteers Needed </td>
+       <td class="column">{{info.userdata.vol}}</td>
+  </tr>
+
+
+	 <tr>
+      <td class="column"> Admin's Remark </td>
+      <td class="column admin">{{info.userdata.remark}}</td>
+	</tr>
+
+    </table>
+      <button class="edit" id="ed" ng-click="editorg()"> Edit </button>
+    </div>
+    </div>
+  <div class="col-md-2"></div>
+   
+</div>
+
+
+
+<!-- EDIT FORM-->
+
+<div class="formwrap" id="edit">
+	<div class="container"> <h2 class="formhead"> Edit Your Idea </h2></div>
+ <form class="org" name="orgupd" novalidate>
+	 <br>
+    <div id="alignleft">
+     
+   
+         <input placeholder="User Email *" id="email" class="userform" name="date" type="email"  ng-model="user.email" readonly="true" required>
+        <br> 
+     <input type="text" id="org1" ng-model="user.org1" placeholder="Organizer 1 *" name="org1" class="userform"  required >
+    
+   	 <br>
+    <input placeholder="Organizer 2 *" id="org2" ng-model="user.org2" name="org2" class="userform" type="text" required>
+ 
+   
+     <br>
+      <input placeholder="Organizer 3 (Optional)" id="org3" ng-model="user.org3" name="org3" class="userform"  type="text"> 
+    
+	<br>   
+
+     <input placeholder="Contact 1 *" ng-value="cont1" id="cont1" type="text" ng-pattern="/^[1-9]{1}[0-9]{9}$/" class="userform" name="cont1" ng-model="user.cont1" required >
+    
+     <br>
+    
+    <input placeholder="Contact 2 *"  ng-value="cont2" id="cont2" type="text" ng-pattern="/^[1-9]{1}[0-9]{9}$/" class="userform" name="cont2" ng-model="user.cont2" required>
+    
+     <br>
+      <input placeholder="Contact 3 (Optional)" id="cont3" class="userform" ng-pattern="/^[1-9]{1}[0-9]{9}$/" name="cont3" ng-model="user.cont3" type="text"> 
+     
+     </div>
+     <div id="alignright">
+      <input placeholder="Items Required for the event *" id="items" class="userform" name="items" ng-model="user.items" type="text"> 
+     
+     
+     <br>
+       
+      <input placeholder="Event Name *" name="event" id="event" type="text" class="userform" ng-model="user.event" required>
+      
+      <br>
+  
+      <textarea placeholder="Description *" name="desc"  id="desc" class="userform" ng-model="user.desc" required></textarea>
+ 
+    
+     <br>
+      
+      <input placeholder="Team Size *" name="team"  id="team" class="userform" ng-model="user.team" type="text" required> 
+     
+    
+      <br>
+      <input placeholder="Estimated budget *" name="bud" id="bud" class="userform" ng-model="user.bud" type="text"> 
+     
+    
+      <br>
+      <input placeholder="Event Duration *" name="duration" id="duration" class="userform" ng-model="user.duration" type="text"> 
+     
+      
+      <br>
+      <input placeholder="No. of volunteers needed *" name="vol" id="vol" class="userform" ng-model="user.vol" type="text"> 
+    
+    
+     <br>
+     <br>
+     
+      <button class="edit" ng-click="updateorg()" id="sub2" ng-disabled="orgupd.$invalid"> Update </button>
+    <span class="succ"> {{message}}</span>  
+
+
+   </div>
+   </form>
+   
+    <br>
+
+</div>
+
+
+
+
+
+<!-- ____________________________________________________________________________________________________________________-->
+
+
+<!--Fresh Form -->
+<div class="formwrap" id="form">
+ <div class="container"> <h2 class="formhead"> Pitch Your Idea </h2></div>
+	 <form class="org" name="orgform" novalidate>
+	 <br>
+    <div id="alignleft">
+     
+    
+      
+       <input placeholder="User Email *" class="userform" name="email" type="email"  ng-model="user.email" required>
+     
+       
+        <br>
+       
+     <input placeholder="Organizer 1 *" class="userform" name="org1" ng-model="user.org1"  type="text" required >
+
+    
+   	 <br>
+    <input placeholder="Organizer 2 *" class="userform" name="org2" type="text" ng-model="user.org2" required>
+ 
+    
+     <br>
+      <input placeholder="Organizer 3 (Optional) *" name="org3" class="userform" ng-model="user.org3" type="text"> 
+     
+	<br>   
+
+     <input placeholder="Contact 1 *" type="text" name="cont1"  ng-pattern="/^[1-9]{1}[0-9]{9}$/" class="userform" ng-model="user.cont1" required >
+   
+     <br>
+    
+    <input placeholder="Contact 2 *" type="text" name="cont2" ng-pattern="/^[1-9]{1}[0-9]{9}$/" class="userform" ng-model="user.cont2" required>
+   
+     <br>
+      <input placeholder="Contact 3 (Optional) *" name="cont3" ng-pattern="/^[1-9]{1}[0-9]{9}$/" class="userform" ng-model="user.cont3" type="text"> 
+     </div>
+     <div id="alignright">
+    
+     <br>
+       <input placeholder="Items Required *" type="text" name="items"  class="userform" ng-model="user.items" required autofocus>
+    
+     <br>
+       
+      <input placeholder="Event Name *" type="text" name="event"  class="userform" ng-model="user.event" required autofocus>
+      
+      <br>
+  
+      <textarea placeholder="Description *" class="userform" name="desc" ng-model="user.desc" required></textarea>
+ 
+    
+     <br>
+      
+      <input placeholder="Team Size *" class="userform" name="team"  ng-model="user.team" type="text" required min="1"> 
+     
+     
+      <br>
+      <input placeholder="Estimated budget *" name="buf" class="userform" ng-model="user.bud" type="text" required> 
+     
+     
+       <br>
+      <input placeholder="No. of volunteers needed *" name="vol" class="userform" ng-model="user.vol" type="text" required> 
+    <br>
+       <input placeholder="Event Duration *" name="duration" class="userform" ng-model="user.duration" type="text"  required> 
+    
+
+     </div>
+    
+     </form>
+    <!-- Required field error-->
+    
+  
+<br>
+<br>
+
+   <p class="succ2"> {{message}}</p>
+    <input type="submit" name="Update" class="sub" ng-click="orgsub()" id="usesub" ng-disabled="orgform.$invalid"> 
+  </div>
+	
+   
+</div>
+</div>

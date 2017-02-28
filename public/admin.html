@@ -1,0 +1,305 @@
+<div ng-init="find1()">
+
+<div class="sidepane"><h3>Admin's Panel</h3></div>
+<div class="container-fluid top">
+	<button class="navbut" ng-click="logout()"> Log Out </button>
+	<button class="navbut" ng-click="find1()"> Events Day 1 </button>
+  <button class="navbut" ng-click="find2()"> Events Day 2 </button>
+	<button class="navbut" ng-click="find()"> All events </button>
+  <button class="navbut" ng-click="findvol()"> Volunteers </button>
+</div>
+
+
+<!-- EDIT PANEL -->
+
+<div class="formwrap" id="editpanel">
+<div class="container"> <h2 class="formhead"> Admin's Editing Space </h2></div>
+  		<form name="updateform">
+	<div id="alignleft">
+     
+	 	
+       <input placeholder="Event Date (dd/mm/yyyy)" class="userform" type="text" id="date2" required autofocus id="date" ng-model="user.date" ng-pattern="/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/">
+        <br>
+      	 
+     <input placeholder="Contact Email  *" id="email2" class="userform" name="email" ng-model="user.email" readonly="true" type="text" required>
+   	 <br>
+   
+     <input placeholder="Organizer 1 *" id="org12" class="userform" name="org1" ng-model="user.org1"  type="text" required>
+     
+   	 <br>
+    <input placeholder="Organizer 2 *" id="org22" class="userform" name="org2" type="text" ng-model="user.org2" required>
+
+     <br>
+      <input placeholder="Organizer 3 (Optional)" id="org32"  name="org3" class="userform" ng-model="user.org3" type="text"> 
+    
+	<br>   
+
+     <input placeholder="Contact 1 *" id="cont12" type="text" name="cont1" class="userform" ng-pattern="/^[1-9]{1}[0-9]{9}$/" ng-model="user.cont1" required >
+   
+     <br>
+    
+    <input placeholder="Contact 2 *" id="cont22" type="text" name="cont2" class="userform" ng-pattern="/^[1-9]{1}[0-9]{9}$/" ng-model="user.cont2" required>
+    
+    <br>
+     <input placeholder="Contact 3 (Optional)" id="cont32" name="cont3" class="userform" ng-pattern="/^[1-9]{1}[0-9]{9}$/" ng-model="user.cont3" type="text"> 
+    
+    
+     <br>
+      <input placeholder="Items Required *" id="items2" name="items2" class="userform"  ng-model="user.items" type="text"> 
+    
+     
+     </div>
+     <div id="alignright2">
+     
+    
+      <br>
+      <input placeholder="Estimated budget *" name="bud" id="bud2" class="userform" ng-model="user.bud" type="text"> 
+     
+       
+      <input placeholder="Event Name *" id="event2" type="text" name="event" class="userform" ng-model="user.event" required autofocus>
+       
+      <br>
+  
+      <textarea placeholder="Description *" id="desc2" class="userform" name="desc" ng-model="user.desc" required></textarea>
+ 
+     <br>
+      
+      <input placeholder="Team Size *" id="team2" class="userform" ng-model="user.team" type="text" required min="1"> 
+    
+      <br>
+      <input placeholder="Event Duration *" name="duration" id="duration2" class="userform" ng-model="user.duration" type="text"> 
+    
+      <br>
+      <input placeholder="No. of volunteers needed *" name="vol" id="vol2" class="userform" ng-model="user.vol" type="text"> 
+     
+      <br>
+      <input placeholder="Admin's Remark" id="remark" class="userform admin" ng-model="user.remark" type="text"> 
+     <br>
+     <span class="succ"> {{message}} </span>
+    <br>
+     <br>
+            <input type="submit" class="edit" id="sub2" name="Update" ng-click="updateadmin()" ng-disabled="updateform.$invalid"> 
+    </div>
+    </form>
+  
+     <br>
+     
+</div>
+</div>
+		
+		
+<!-- Editing Volunteer -->
+<div class="formwrap" id="editvol">
+  <div class="container"> <h2 class="formhead"> Edit Volunteer </h2></div>
+ <form class="volupd" name="volform" novalidate>
+   <br>
+    <div id="alignleft">
+     
+        
+     
+         <input placeholder="Contact Email" class="userform" type="email"  id="emailv" ng-model="user.email" readonly="true" required>
+       <br>
+       <br> 
+     <input type="text" ng-model="user.name" placeholder="Full Name" name="name" id="namev" class="userform" required readonly="true">
+     <br>
+     <br>
+     <input placeholder="Contact" type="text" ng-pattern="/^[1-9]{1}[0-9]{9}$/" id="contactv" class="userform" name="cont" ng-model="user.cont" readonly="true" required >
+    <br>
+     <br>
+    
+    <input placeholder="Branch" type="text" class="userform" name="branch" id="branchv"  ng-model="user.branch" required readonly="true">
+    <br>
+    <br>
+      <input placeholder="Year (1st year,2nd year etc)" class="userform" name="year" id="yearv"  ng-model="user.year" type="text" readonly="true"> 
+     </div>
+    
+     <div id="alignright">
+    
+    <br>
+      <textarea placeholder="Assigned Duty" name="duty"  id="dutyv" class="userform" ng-model="user.duty"></textarea>
+     <br>
+     <br>
+       <input placeholder="IEEE Membership Number" type="text" class="userform" name="ieee" id="ieeev"  ng-model="user.ieee" readonly="true" required>
+    <br>
+    <br>
+
+ 
+      <button class="edit" ng-click="volupdate()" id="but" ng-disabled="volupd.$invalid"> Update </button>
+    <span class="succ"> {{message}}</span>  
+
+    </div>
+    </form>
+    <br>
+  
+</div>
+
+<!-- VIEW ALL DATA -->
+
+<div class="formwrap" id="view1"> 
+<p class="succ2"> {{deletemess}} </p>
+<div class="col-md-2"></div>
+<div class="container"> <h2 class="formhead"> Events on Day 1- 24/03/2017 </h2></div>
+<div id="tableview" ng-repeat="x in alldata1">
+    <table>
+   	<tr>
+    <td class="column"> Contact Email </td>
+    <td class="column">{{x.email}}</td>
+    </tr>
+
+    <tr>
+    <td class="column"> Event Name </td>
+    <td class="column">{{x.userdata.eventname}}</td>
+    </tr>
+
+    <tr>
+    <td class="column"> Event Description </td>
+    <td class="column"> {{x.userdata.desc}}</td>
+    </tr>
+
+    <tr>
+    <td class="column"> Event Date </td>
+    <td class="column">{{x.userdata.date}}</td>
+    </tr>
+
+    
+    </table>
+ 
+  <button class="edit" id="up" ng-click="edit(x)"> Update </button>
+  <button class="edit" ng-click="del(x)"> Delete </button>
+	
+  </div>
+  <br>
+   <br>
+  <br>
+  <div class="col-md-2"></div>
+
+</div>
+  
+
+
+
+<!-- Day 2-->
+ <div class="formwrap" id="view2"> 
+<p class="succ2"> {{deletemess}} </p>
+
+<div class="col-md-2"></div>
+<div class="container"> <h2 class="formhead"> Events on Day 2-25/03/2017 </h2></div>
+
+<div id="tableview" ng-repeat="x in alldata2">
+    <table>
+   	<tr>
+    <td class="column"> Contact Email </td>
+    <td class="column">{{x.email}}</td>
+    </tr>
+
+    <tr>
+    <td class="column"> Event Name </td>
+    <td class="column">{{x.userdata.eventname}}</td>
+    </tr>
+
+    <tr>
+    <td class="column"> Event Description </td>
+    <td class="column"> {{x.userdata.desc}}</td>
+    </tr>
+
+    <tr>
+    <td class="column"> Event Date </td>
+    <td class="column">{{x.userdata.date}}</td>
+    </tr>
+
+    </table>
+  
+  <button class="edit" id="up" ng-click="edit(x)"> Update </button>
+  <button class="edit" ng-click="del(x)"> Delete </button>
+	
+  </div>
+  <div class="col-md-2"></div>
+  </div>
+
+
+
+
+<!-- Volunteers list -->
+
+<div class="formwrap" id="viewvol">
+<h2 class="formhead"> Volunteers List </h2>
+<button class="edit" id="downvol" exporttocsv> Download </button>
+
+<p class="succ2"> {{deletemess}} </p>
+<div id="tableviewvol">
+
+    <table id="tablevol">
+    <tr>
+   
+    <td class="colhead th" id="namecol"> Name </td>
+    <td class="colhead th" id="contcol"> Contact | Email </td>
+    <td class="colhead th" id="yearcol"> Year | Branch </td>
+    <td class="colhead th" id="dutycol"> Assigned Duty</td>
+    <td class="colhead th" id="butcol"> Assign </td>
+    
+    </tr>
+
+    <tr ng-repeat="x in alldatav" ng-show="x.volunteer">
+    
+    <td class="colhead" id="namecol">{{x.volunteer.name}}</td>
+    <td class="colhead" id="contcol"> {{x.volunteer.contact}} {{x.email}}</td>
+    <td class="colhead" id="yearcol">{{x.volunteer.year}} {{x.volunteer.branch}} </td>
+    <td class="colhead" id="dutycol">{{x.volunteer.duty}} </td>
+    <td class="colhead" id="butcol"> <button class="edittab" ng-click="editvol(x)"> Assign </button></td>
+   
+    <br>
+    <br>
+    </tr> 
+   
+    </table>
+ 
+ 
+  
+  </div>
+
+</div>
+
+<!-- ____________________________________________________________________________________________-->
+
+<!-- View All -->
+<div class="formwrap" id="viewall"> 
+<p class="succ2"> {{deletemess}} </p>
+<div class="col-md-2"></div>
+<div class="container"> <h2 class="formhead"> All Events </h2></div>
+
+<div id="tableview" ng-repeat="x in alldata" ng-show="x.userdata">
+    <table>
+    <tr>
+    <td class="column"> Contact Email </td>
+    <td class="column">{{x.email}}</td>
+    </tr>
+
+    <tr>
+    <td class="column"> Event Name </td>
+    <td class="column">{{x.userdata.eventname}}</td>
+    </tr>
+
+    <tr>
+    <td class="column"> Event Description </td>
+    <td class="column"> {{x.userdata.desc}}</td>
+    </tr>
+
+    <tr>
+    <td class="column"> Event Date </td>
+    <td class="column">{{x.userdata.date}}</td>
+    </tr>
+
+    
+    </table>
+
+  <button class="edit" id="up" ng-click="edit(x)"> Update </button>
+  <button class="edit" ng-click="del(x)"> Delete </button>
+  
+  </div>
+  <br>
+  <br>
+  </div>
+  <div class="col-md-2"></div>
+
+  
+  </div>
